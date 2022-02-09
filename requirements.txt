@@ -5,5 +5,4 @@ graphviz
 numpy
 datetime
 requests
-PIL
 Image
