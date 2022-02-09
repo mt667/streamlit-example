@@ -1,4 +1,5 @@
 from collections import namedtuple
+from dataclasses import dataclass
 from lib2to3.pgen2.pgen import DFAState
 import altair as alt 
 import numpy as np
@@ -6,6 +7,7 @@ import pandas as pd
 import streamlit as st
 import graphviz as graphviz
 import datetime as datetime
+import requests
 
 #Homework 1: Deleted the starter code and am now writing my own code below
 #I want to make it clear that only the Streamlit documentation was used to complete this portion of the assignment
@@ -117,6 +119,10 @@ mytable2=mytable.add_rows(my_df2)
 #array3=my_df.add_rows(array2)
 #rows are x coordinates and columns are y coordinates
 st.line_chart(my_df)
+#@st.cache
+#url= "https://www.collegehockeynews.com/stats/team/Cornell/18"
+#def fetch_and_clean_data(url):
+    #return data
 
 st.success('You have reached the end. I hope you enjoyed going through this.')
 #From each category, these functions were used
@@ -130,8 +136,8 @@ st.success('You have reached the end. I hope you enjoyed going through this.')
 #st.form, st.form_submit_button
 #st.set_page_config, st.help
 #Mutate charts did one
-#State Management need to do
-#Performance need to do
+#State Management do not need to do: Spoke with Prof Kastner and he said not to worry about it
+#Performance did st.cache
 #st.image, st.video 
 
 
