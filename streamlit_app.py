@@ -92,17 +92,32 @@ with st.form("favorite number"):
     if submitted:
         st.write("Your favorite number is", slider_val, "My favorite number is 4 and the checkbox is clicked", checkbox_val)
 
+with st.container():
+    code='''if st.button('Change color'):
+        url= "http://colormind.io/api/"
+        response = requests.get("http://colormind.io/api/", json={"model": "ui"})
+        print(response.json())
+        import json
+        lame=json.loads(response.json())
+        print(lame)
+        st.markdown
+    else:
+        st.write('Colormind API Bonus!')'''
+    st.write('I attempted the Colormind API bonus but was unable to fully figure it out. I was able to extract the json file from the Colormind Rest API')
+    st.code(code, language='python')
 
 st.write('I used st.help here to understand how to use the st.image function')
-from PIL import Image
-st.help(st.image)
-image=Image.open('grad pic 2.jpg')
-st.image(image, caption='This is me during May 2021 Commencement at Cornell')
-st.write('My favorite sport is hockey and I enjoy going to the Cornell mens hockey team games. Below is a video from the 2021 Cornell versus Yale game')
-videofile=open('IMG-5582.MOV','rb')
-hockeyvideo=videofile.read()
-st.video(hockeyvideo)
-#st.video()
+
+with st.container():
+    from PIL import Image
+    st.help(st.image)
+    image=Image.open('grad pic 2.jpg')
+    st.image(image, caption='This is me during May 2021 Commencement at Cornell')
+    st.write('My favorite sport is hockey and I enjoy going to the Cornell mens hockey team games. Below is a video from the 2021 Cornell versus Yale game')
+    videofile=open('IMG-5582.MOV','rb')
+    hockeyvideo=videofile.read()
+    st.video(hockeyvideo)
+    #st.video()
 
 
 st.write('Below, I experiment with some of the features in Streamlit.')
@@ -125,6 +140,8 @@ st.line_chart(my_df)
     #return data
 
 st.success('You have reached the end. I hope you enjoyed going through this.')
+
+
 #From each category, these functions were used
 #used st.write. need to use magic.
 #st.title an st.write
@@ -137,7 +154,7 @@ st.success('You have reached the end. I hope you enjoyed going through this.')
 #st.set_page_config, st.help
 #Mutate charts did one
 #State Management do not need to do: Spoke with Prof Kastner and he said not to worry about it
-#Performance did st.cache
+#Performance did not need to do
 #st.image, st.video 
 
 
